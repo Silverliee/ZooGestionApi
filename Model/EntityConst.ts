@@ -1,3 +1,4 @@
+// @ts-ignore
 class entityConst {
     //Space type const here
     static SPACE_TYPE() {

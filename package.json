@@ -4,16 +4,23 @@
   "description": "Simple expressJs api to manage a zoo (Student project)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "WILLEMAIN Damien, MULET Jules, TRAORE Mohamed Seydou",
   "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.3",
+    "nodemon": "^2.0.22"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "mongoose-unique-validator": "^4.0.0",
-    "nodemon": "^2.0.22"
+    "dotenv": "^16.0.3"
   }
 }

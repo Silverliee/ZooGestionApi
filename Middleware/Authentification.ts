@@ -1,5 +1,6 @@
 const jsonWebToken = require('jsonwebtoken');
 
+// @ts-ignore
 module.exports = (req, res, next) => {
     try {
         const token = req.headers.authorization;
@@ -11,6 +12,7 @@ module.exports = (req, res, next) => {
             next();
         }
     } catch(error) {
+        // @ts-ignore
         res.status(401).json({error: error | 'Erreur d\'authentification'})
     }
 };
