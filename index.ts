@@ -17,6 +17,7 @@ mongoose.connect('mongodb+srv://mohamed:414498200@silver-cluster.yegdt.mongodb.n
     .catch(() => console.log('la connexion au cluster à échouée :('));
 
 //configuration des headers pour éviter les erreurs CORS( Cross-Origin Resource Sharing, je sais pas ce que c'est mais je sais que c'est important)
+// @ts-ignore
 const app = express();
 // Les routes ici
 const animalController = new AnimalController();
@@ -69,7 +70,6 @@ const onError = error => {
 
 const port = normalizePort(8080);
 console.log("listening the port : " + port);
-
 const server = http.createServer(app);
 server.on("error", onError);
 server.listen(port);

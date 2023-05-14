@@ -1,8 +1,7 @@
 import {Request, Response, Router} from "express";
 import * as express from "express";
-import {Employee, EmployeeModel} from "../Model/Employee";
+import {Employee, EmployeeModel} from "../Model";
 import {Model} from "mongoose";
-import {Space, SpaceModel} from "../Model/Space";
 
 const authentication = require('../Middleware/Authentification');
 const jwt = require('jsonwebtoken');

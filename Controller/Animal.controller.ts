@@ -1,7 +1,7 @@
 import {Request, Response, Router} from "express";
 import * as express from "express";
-import {Employee, EmployeeModel} from "../Model/Employee";
-import {Animal, AnimalModel} from "../Model/Animal";
+import {Employee, EmployeeModel} from "../Model";
+import {Animal, AnimalModel} from "../Model";
 import {Model} from "mongoose";
 
 const authentication = require('../Middleware/Authentification');

@@ -1,10 +1,10 @@
 import {Request, Response, Router} from "express";
 import * as express from "express";
-import {Visitor, VisitorModel} from "../Model/Visitor";
-import {Space, SpaceModel} from "../Model/Space";
-import {Zoo, ZooModel} from "../Model/Zoo";
-import {Pass, PassModel} from "../Model/Pass";
-import {AttendanceHistory, AttendanceHistoryModel} from "../Model/AttendanceHistory";
+import {Visitor, VisitorModel} from "../Model";
+import {Space, SpaceModel} from "../Model";
+import {Zoo, ZooModel} from "../Model";
+import {Pass, PassModel} from "../Model";
+import {AttendanceHistory, AttendanceHistoryModel} from "../Model";
 import {Model} from "mongoose";
 
 const authentication = require('../Middleware/Authentification');

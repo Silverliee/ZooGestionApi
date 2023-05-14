@@ -1,8 +1,8 @@
 import {Request, Response, Router} from "express";
 import * as express from "express";
-import {Employee, EmployeeModel} from "../Model/Employee";
-import {Visitor, VisitorModel} from "../Model/Visitor";
-import {Zoo, ZooModel} from "../Model/Zoo";
+import {Employee, EmployeeModel} from "../Model";
+import {Visitor, VisitorModel} from "../Model";
+import {Zoo, ZooModel} from "../Model";
 import {Model} from "mongoose";
 
 const authentication = require('../Middleware/Authentification');
