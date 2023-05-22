@@ -1,5 +1,5 @@
 import {Request, Response, Router} from "express";
-import * as express from "express";
+import express from "express";
 import {Employee, EmployeeModel} from "../Model";
 import {Model} from "mongoose";
 
@@ -93,15 +93,15 @@ export class EmployeeController {
     }
 
     buildRoutes(): Router {
-        const router = express.Router();
-        router.get(this.path, authentication, this.getEmployees.bind(this));
-        router.get(this.path + "/:id", authentication, this.getEmployeeById.bind(this));
-        router.post(this.path, authentication, this.createEmployee.bind(this));
-        router.put(this.path + "/:id", authentication, this.updateEmployee.bind(this));
-        router.delete(this.path + "/:id", authentication, this.deleteEmployee.bind(this));
-        router.post(this.path + "/login", this.login.bind(this));
-        router.put(this.path + "/start/:id", authentication, this.employeeStartWork.bind(this));
-        router.put(this.path + "/end/:id", authentication, this.employeeEndWork.bind(this));
+        let router = express.Router();
+        router.get("/", authentication, this.getEmployees.bind(this));
+        router.get("/:id", authentication, this.getEmployeeById.bind(this));
+        router.post("/", authentication, this.createEmployee.bind(this));
+        router.put("/:id", authentication, this.updateEmployee.bind(this));
+        router.delete("/:id", authentication, this.deleteEmployee.bind(this));
+        router.post("/login", this.login.bind(this));
+        router.put("/start/:id", authentication, this.employeeStartWork.bind(this));
+        router.put("/end/:id", authentication, this.employeeEndWork.bind(this));
         return router;
     }
 }

@@ -1,10 +1,8 @@
 "use strict";
 // @ts-ignore
-var entityConst = /** @class */ (function () {
-    function entityConst() {
-    }
+class entityConst {
     //Space type const here
-    entityConst.SPACE_TYPE = function () {
+    static SPACE_TYPE() {
         return {
             1: "Savane",
             2: "Montagne",
@@ -13,18 +11,18 @@ var entityConst = /** @class */ (function () {
             5: "Plaine",
             6: "Forêt"
         };
-    };
+    }
     //Employee role const here
-    entityConst.EMPLOYEE_ROLE = function () {
+    static EMPLOYEE_ROLE() {
         return {
             1: "Agent d'entretien",
             2: "Vétérinaire",
             3: "Agent d'accueil",
             4: "Vendeur"
         };
-    };
+    }
     //Pass const here
-    entityConst.PASS_TYPE = function () {
+    static PASS_TYPE() {
         return {
             1: "PASS journée",
             2: "PASS Week-end",
@@ -33,7 +31,6 @@ var entityConst = /** @class */ (function () {
             5: "PASS Escape game",
             6: "PASS Night"
         };
-    };
-    return entityConst;
-}());
+    }
+}
 module.exports = entityConst;

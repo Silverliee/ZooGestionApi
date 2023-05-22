@@ -24,35 +24,37 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Les dépendances ici
-var mongoose = __importStar(require("mongoose"));
-var express = __importStar(require("express"));
-var Controller_1 = require("./Controller");
-var Controller_2 = require("./Controller");
-var Controller_3 = require("./Controller");
-var Controller_4 = require("./Controller");
-var Controller_5 = require("./Controller");
-var http = require("http");
+const mongoose = __importStar(require("mongoose"));
+const express = __importStar(require("express"));
+const Controller_1 = require("./Controller");
+const Controller_2 = require("./Controller");
+const Controller_3 = require("./Controller");
+const Controller_4 = require("./Controller");
+const Controller_5 = require("./Controller");
+const path = __importStar(require("path"));
+const http = require("http");
 //Connexion à la base de données (c'est un cluster mongodb atlas)
 mongoose.connect('mongodb+srv://mohamed:414498200@silver-cluster.yegdt.mongodb.net/PlanodeZooApi?retryWrites=true&w=majority', {})
-    .then(function () { return console.log('Connexion à mon cluster mongodb réussie !'); })
-    .catch(function () { return console.log('la connexion au cluster à échouée :('); });
+    .then(() => console.log('Connexion à mon cluster mongodb réussie !'))
+    .catch(() => console.log('la connexion au cluster à échouée :('));
 //configuration des headers pour éviter les erreurs CORS( Cross-Origin Resource Sharing, je sais pas ce que c'est mais je sais que c'est important)
 // @ts-ignore
-var app = express();
+const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 // Les routes ici
-var animalController = new Controller_3.AnimalController();
-var employeeController = new Controller_2.EmployeeController();
-var zooController = new Controller_4.ZooController();
-var visitorController = new Controller_5.VisitorController();
-var spaceController = new Controller_1.SpaceController();
+const animalController = new Controller_3.AnimalController();
+const employeeController = new Controller_2.EmployeeController();
+const zooController = new Controller_4.ZooController();
+const visitorController = new Controller_5.VisitorController();
+const spaceController = new Controller_1.SpaceController();
 app.use(animalController.path, animalController.buildRoutes());
 app.use(employeeController.path, employeeController.buildRoutes());
 app.use(spaceController.path, spaceController.buildRoutes());
 app.use(zooController.path, zooController.buildRoutes());
 app.use(visitorController.path, visitorController.buildRoutes());
 // @ts-ignore
-var normalizePort = function (val) {
-    var port = parseInt(val, 10);
+const normalizePort = val => {
+    const port = parseInt(val, 10);
     if (isNaN(port)) {
         // named pipe
         return val;
@@ -64,12 +66,12 @@ var normalizePort = function (val) {
     return false;
 };
 // @ts-ignore
-var onError = function (error) {
+const onError = error => {
     if (error.syscall !== "listen") {
         throw error;
     }
-    var addr;
-    var bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
+    let addr;
+    const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
     switch (error.code) {
         case "EACCES":
             console.error(bind + " requires elevated privileges");
@@ -83,8 +85,8 @@ var onError = function (error) {
             throw error;
     }
 };
-var port = normalizePort(8080);
+const port = normalizePort(8080);
 console.log("listening the port : " + port);
-var server = http.createServer(app);
+const server = http.createServer(app);
 server.on("error", onError);
 server.listen(port);

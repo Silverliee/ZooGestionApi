@@ -1,5 +1,5 @@
 import {Request, Response, Router} from "express";
-import * as express from "express";
+import express from "express";
 import {Space, SpaceModel} from "../Model";
 import {Employee, EmployeeModel} from "../Model";
 import {Animal, AnimalModel} from "../Model";
@@ -234,22 +234,22 @@ export class SpaceController {
     }
 
     buildRoutes(): Router {
-        const router = express.Router();
-        router.get(this.path, authentication, this.getSpaces.bind(this));
-        router.get(this.path + "/:id", authentication, this.getSpaceById.bind(this));
-        router.post(this.path, authentication, entityConstValidator, this.createSpace.bind(this));
-        router.put(this.path + "/:id", authentication, entityConstValidator, this.updateSpace.bind(this));
-        router.delete(this.path + "/:id", authentication, this.deleteSpace.bind(this));
-        router.get(this.path + "/:id/maintenanceHistory", authentication, this.getSpaceMaintenanceHistory.bind(this));
-        router.get(this.path + "/:id/attendanceHistory", authentication, this.getSpaceAttendanceHistory.bind(this));
-        router.get(this.path + "/:id/animals", authentication, this.getSpaceAnimals.bind(this));
-        router.get(this.path + "/maintenance", authentication, this.getSpacesInMaintenance.bind(this));
-        router.post(this.path + "/:id/isVisited", authentication, this.isSpaceGetVisitedByDate.bind(this));
-        router.post(this.path + "/:id/isVisitedByPeriod", authentication, this.isSpaceGetVisitedByPeriod.bind(this));
-        router.get(this.path + "/:id/animals/treatments", authentication, this.getAnimalsTreatmentBySpace.bind(this));
-        router.get(this.path + "/:id/isVisitedActually", authentication, this.isSpaceVisitedActually.bind(this));
-        router.post(this.path + "/:id/animals", authentication, this.addAnimalToSpace.bind(this));
-        router.post(this.path + "/:id/isInMaintenance", authentication, this.isSpaceInMaintenance.bind(this));
+        let router = express.Router();
+        router.get("/", authentication, this.getSpaces.bind(this));
+        router.get("/:id", authentication, this.getSpaceById.bind(this));
+        router.post("/", authentication, entityConstValidator, this.createSpace.bind(this));
+        router.put("/:id", authentication, entityConstValidator, this.updateSpace.bind(this));
+        router.delete("/:id", authentication, this.deleteSpace.bind(this));
+        router.get("/:id/maintenanceHistory", authentication, this.getSpaceMaintenanceHistory.bind(this));
+        router.get("/:id/attendanceHistory", authentication, this.getSpaceAttendanceHistory.bind(this));
+        router.get("/:id/animals", authentication, this.getSpaceAnimals.bind(this));
+        router.get("/maintenance", authentication, this.getSpacesInMaintenance.bind(this));
+        router.post("/:id/isVisited", authentication, this.isSpaceGetVisitedByDate.bind(this));
+        router.post("/:id/isVisitedByPeriod", authentication, this.isSpaceGetVisitedByPeriod.bind(this));
+        router.get("/:id/animals/treatments", authentication, this.getAnimalsTreatmentBySpace.bind(this));
+        router.get("/:id/isVisitedActually", authentication, this.isSpaceVisitedActually.bind(this));
+        router.post("/:id/animals", authentication, this.addAnimalToSpace.bind(this));
+        router.post("/:id/isInMaintenance", authentication, this.isSpaceInMaintenance.bind(this));
         return router;
     }
 }

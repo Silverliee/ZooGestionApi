@@ -1,5 +1,5 @@
 import {Request, Response, Router} from "express";
-import * as express from "express";
+import express from "express";
 import {Visitor, VisitorModel} from "../Model";
 import {Space, SpaceModel} from "../Model";
 import {Zoo, ZooModel} from "../Model";
@@ -145,7 +145,7 @@ export class VisitorController {
     }
 
     buildRoutes(): Router {
-        const router = express.Router();
+        let router = express.Router();
         router.get("/", authentication, this.getVisitors.bind(this));
         router.get("/:id", authentication, this.getVisitorById.bind(this));
         router.post("/", authentication, entityConstValidator, this.createVisitor.bind(this));

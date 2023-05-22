@@ -24,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AttendanceHistoryModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var attendanceHistorySchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const attendanceHistorySchema = new mongoose_1.Schema({
     spaceId: String,
     date: String,
 });

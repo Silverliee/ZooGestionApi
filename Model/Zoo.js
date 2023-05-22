@@ -24,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ZooModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var zooSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const zooSchema = new mongoose_1.Schema({
     is_open: Boolean,
     in_night: Boolean
 });

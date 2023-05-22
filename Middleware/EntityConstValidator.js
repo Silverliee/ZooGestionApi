@@ -1,13 +1,11 @@
 "use strict";
 // @ts-ignore
-var entityConst = require('../Model/EntityConst');
-var entityConstValidator = /** @class */ (function () {
-    function entityConstValidator() {
-    }
+const entityConst = require('../Model/EntityConst');
+class entityConstValidator {
     //function to verify if value is in range of acceptable value for a entity
     // @ts-ignore
-    entityConstValidator.isValid = function (entity, value) {
-        var validValues;
+    static isValid(entity, value) {
+        let validValues;
         switch (entity) {
             case 'PASS_TYPE':
                 validValues = entityConst.PASS_TYPE();
@@ -23,7 +21,6 @@ var entityConstValidator = /** @class */ (function () {
         }
         // @ts-ignore
         return validValues.hasOwnProperty(value);
-    };
-    return entityConstValidator;
-}());
+    }
+}
 module.exports = entityConstValidator;

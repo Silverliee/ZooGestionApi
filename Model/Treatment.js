@@ -24,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.treatmentSchema = exports.TreatmentModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var treatmentSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const treatmentSchema = new mongoose_1.Schema({
     veterinary: String,
     treatment: String,
     date: String,

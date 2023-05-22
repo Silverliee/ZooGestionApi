@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnimalModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var treatmentSchema = require("./Treatment").treatmentSchema;
-var animalSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const { treatmentSchema } = require("./Treatment");
+const animalSchema = new mongoose_1.Schema({
     name: String,
     treatments: { type: [treatmentSchema], default: undefined }
 });

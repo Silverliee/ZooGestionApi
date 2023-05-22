@@ -1,5 +1,5 @@
 import {Request, Response, Router} from "express";
-import * as express from "express";
+import express from "express";
 import {Employee, EmployeeModel} from "../Model";
 import {Visitor, VisitorModel} from "../Model";
 import {Zoo, ZooModel} from "../Model";
@@ -238,7 +238,7 @@ export class ZooController {
         }
 
         buildRoutes(): Router {
-            const router = express.Router();
+            let router = express.Router();
             // .bind(this) permet de conserver le this lors de l'appel par express de la fonction
             router.get('/', authentication, this.getAll.bind(this));
             router.get('/:name', authentication, this.searchZoo.bind(this));

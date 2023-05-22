@@ -1,14 +1,12 @@
-import {Request, Response, Router} from "express";
-import * as express from "express";
-import {Employee, EmployeeModel} from "../Model";
-import {Animal, AnimalModel} from "../Model";
-import {Model} from "mongoose";
+import { Request, Response, Router } from "express";
+import express from "express";
+import { EmployeeModel } from "../Model";
+import { Animal, AnimalModel } from "../Model";
+import { Model } from "mongoose";
 
 const authentication = require('../Middleware/Authentification');
-const entityConst = require('../Model/EntityConst');
 
 export class AnimalController {
-
     readonly path: string;
     readonly model: Model<Animal>;
 
@@ -28,8 +26,8 @@ export class AnimalController {
     }
 
     async createAnimal(req: Request, res: Response) {
-        if(req.body.name == null) {
-            res.status(400).json({message: "Le contenue de votre requête est invalide"});
+        if (req.body.name == null) {
+            res.status(400).json({ message: "Le contenu de votre requête est invalide" });
         } else {
             const animal = new this.model(req.body);
             await animal.save();
@@ -39,8 +37,8 @@ export class AnimalController {
 
     async updateAnimal(req: Request, res: Response) {
         const animal = await this.model.findById(req.params.id);
-        if(animal == null) {
-            res.status(400).json({message: "Le contenue de votre requête est invalide"});
+        if (animal == null) {
+            res.status(400).json({ message: "Le contenu de votre requête est invalide" });
         } else {
             await animal.updateOne(req.body);
             res.status(200).json(animal);
@@ -49,8 +47,8 @@ export class AnimalController {
 
     async deleteAnimal(req: Request, res: Response) {
         const animal = await this.model.findById(req.params.id);
-        if(animal == null) {
-            res.status(400).json({message: "Le contenue de votre requête est invalide"});
+        if (animal == null) {
+            res.status(400).json({ message: "Le contenu de votre requête est invalide" });
         } else {
             await animal.deleteOne();
             res.status(200).json(animal);
@@ -58,41 +56,34 @@ export class AnimalController {
     }
 
     async getAnimalTreatment(req: Request, res: Response) {
-        const employee = await EmployeeModel.findOne({email: req.body.email})
-        if(employee === null) {
-            res.status(404).json({message: "Aucun employée ne possède cette email"})
-        } else if(employee.password != req.body.password) {
-            res.status(400).json({message: "Le mot de passe est incorrecte"})
-        }
-        // @ts-ignore
-        if(employee.role !== 2) {
-            res.status(400).json({message: "Vous devez être vétérinaire pour ajouter un traitement au carnet"})
-        }
-        const animal = await AnimalModel.findOne({_id: req.params.id})
-            .catch(error => res.status(400).json({error}))
-        // @ts-ignore
-        if(animal.treatments == undefined) {
-            await AnimalModel.updateOne({_id: req.params.id}, {treatments: req.body})
-                .then(() => res.status(200).json({message: "Le traitement à bien été ajouté"}))
-                .catch(error => res.status(400).json({error}));
+        const employee = await EmployeeModel.findOne({ email: req.body.email });
+        if (employee === null) {
+            res.status(404).json({ message: "Aucun employé ne possède cet email" });
+        } else if (employee.password !== req.body.password) {
+            res.status(400).json({ message: "Le mot de passe est incorrect" });
+        } else if (employee.role !== 2) {
+            res.status(400).json({ message: "Vous devez être vétérinaire pour ajouter un traitement au carnet" });
         } else {
-            // @ts-ignore
-            animal.treatments.push(req.body);
-            // @ts-ignore
-            await AnimalModel.updateOne({_id: req.params.id}, {treatments: animal.treatments})
-                .then(() => res.status(200).json({message: "Le traitement à bien été ajouté"}))
-                .catch(error => res.status(400).json({error}));
+            const animal = await AnimalModel.findOne({ _id: req.params.id });
+            if (animal === null) {
+                res.status(400).json({ message: "L'animal avec cet ID n'existe pas" });
+            } else {
+                const treatments = animal.treatments || [];
+                treatments.push(req.body);
+                await AnimalModel.updateOne({ _id: req.params.id }, { treatments });
+                res.status(200).json({ message: "Le traitement a bien été ajouté" });
+            }
         }
     }
 
     buildRoutes(): Router {
         const router = express.Router();
-        router.get(this.path, authentication, this.getAnimals.bind(this));
-        router.get(this.path + "/:id", authentication, this.getAnimalById.bind(this));
-        router.post(this.path, authentication, this.createAnimal.bind(this));
-        router.put(this.path + "/:id", authentication, this.updateAnimal.bind(this));
-        router.delete(this.path + "/:id", authentication, this.deleteAnimal.bind(this));
-        router.post(this.path + "/:id/treatment", authentication, this.getAnimalTreatment.bind(this));
+        router.get("/", async (req, res) => this.getAnimals(req, res));
+        router.get("/:id", authentication, async (req, res) => this.getAnimalById(req, res));
+        router.post("/", authentication, async (req, res) => this.createAnimal(req, res));
+        router.put("/:id", authentication, async (req, res) => this.updateAnimal(req, res));
+        router.delete("/:id", authentication, async (req, res) => this.deleteAnimal(req, res));
+        router.post("/:id/treatment", authentication, async (req, res) => this.getAnimalTreatment(req, res));
         return router;
     }
 }

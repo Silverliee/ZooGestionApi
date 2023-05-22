@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmployeeModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var uniqueValidator = require('mongoose-unique-validator');
-var employeeSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const uniqueValidator = require('mongoose-unique-validator');
+const employeeSchema = new mongoose_1.Schema({
     name: String,
     is_admin: Boolean,
     role: Number,

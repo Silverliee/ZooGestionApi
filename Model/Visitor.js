@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VisitorModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var passSchemaExport = require('../Model/Pass').passSchemaExport;
-var visitorSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const { passSchemaExport } = require('../Model/Pass');
+const visitorSchema = new mongoose_1.Schema({
     name: String,
     actualLocation: { type: String, required: false },
     pass: passSchemaExport,

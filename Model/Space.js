@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpaceModel = void 0;
-var mongoose_1 = __importStar(require("mongoose"));
-var maintenanceHistorySchemaExport = require("./MaintenanceHistory").maintenanceHistorySchemaExport;
-var spaceSchema = new mongoose_1.Schema({
+const mongoose_1 = __importStar(require("mongoose"));
+const { maintenanceHistorySchemaExport } = require("./MaintenanceHistory");
+const spaceSchema = new mongoose_1.Schema({
     name: String,
     description: String,
     images: { type: String, required: false },
