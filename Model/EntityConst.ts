@@ -29,8 +29,7 @@ class entityConst {
             2: "PASS Week-end",
             3: "PASS Annuel",
             4: "PASS 1daymonth",
-            5: "PASS Escape game",
-            6: "PASS Night"
+            5: "PASS Night"
         }
     }
 }

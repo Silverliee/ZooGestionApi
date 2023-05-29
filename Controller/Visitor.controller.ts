@@ -1,10 +1,10 @@
 import {Request, Response, Router} from "express";
 import express from "express";
 import {Visitor, VisitorModel} from "../Model";
-import {Space, SpaceModel} from "../Model";
-import {Zoo, ZooModel} from "../Model";
-import {Pass, PassModel} from "../Model";
-import {AttendanceHistory, AttendanceHistoryModel} from "../Model";
+import {SpaceModel} from "../Model";
+import {ZooModel} from "../Model";
+import {PassModel} from "../Model";
+import {AttendanceHistoryModel} from "../Model";
 import {Model} from "mongoose";
 
 const authentication = require('../Middleware/Authentification');
@@ -146,13 +146,16 @@ export class VisitorController {
 
     buildRoutes(): Router {
         let router = express.Router();
+        //CRUD
         router.get("/", authentication, this.getVisitors.bind(this));
         router.get("/:id", authentication, this.getVisitorById.bind(this));
         router.post("/", authentication, entityConstValidator, this.createVisitor.bind(this));
         router.put("/:id", authentication, entityConstValidator, this.updateVisitor.bind(this));
         router.delete("/:id", authentication, this.deleteVisitor.bind(this));
+        //PASS
         router.post("/:id/pass", authentication, this.addPassToVisitor.bind(this));
         router.post("/:id/move/:space", authentication, this.moveVisitorToSpace.bind(this));
+        //RETURN
         return router;
     }
 }

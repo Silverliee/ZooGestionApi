@@ -94,14 +94,17 @@ export class EmployeeController {
 
     buildRoutes(): Router {
         let router = express.Router();
+        //CRUD
         router.get("/", authentication, this.getEmployees.bind(this));
         router.get("/:id", authentication, this.getEmployeeById.bind(this));
-        router.post("/", authentication, this.createEmployee.bind(this));
+        router.post("/", this.createEmployee.bind(this));
         router.put("/:id", authentication, this.updateEmployee.bind(this));
         router.delete("/:id", authentication, this.deleteEmployee.bind(this));
+        // Employee gestion
         router.post("/login", this.login.bind(this));
         router.put("/start/:id", authentication, this.employeeStartWork.bind(this));
         router.put("/end/:id", authentication, this.employeeEndWork.bind(this));
+        //RETURN
         return router;
     }
 }

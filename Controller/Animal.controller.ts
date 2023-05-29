@@ -78,12 +78,15 @@ export class AnimalController {
 
     buildRoutes(): Router {
         const router = express.Router();
-        router.get("/", async (req, res) => this.getAnimals(req, res));
-        router.get("/:id", authentication, async (req, res) => this.getAnimalById(req, res));
-        router.post("/", authentication, async (req, res) => this.createAnimal(req, res));
-        router.put("/:id", authentication, async (req, res) => this.updateAnimal(req, res));
-        router.delete("/:id", authentication, async (req, res) => this.deleteAnimal(req, res));
-        router.post("/:id/treatment", authentication, async (req, res) => this.getAnimalTreatment(req, res));
+        //CRUD
+        router.get("/", this.getAnimals.bind(this));
+        router.get("/:id", authentication, this.getAnimalById.bind(this));
+        router.post("/", authentication, this.createAnimal.bind(this));
+        router.put("/:id", authentication, this.updateAnimal.bind(this));
+        router.delete("/:id", authentication, this.deleteAnimal.bind(this));
+        //TREATMENT
+        router.post("/:id/treatment", authentication, this.getAnimalTreatment.bind(this));
+        //RETURN
         return router;
     }
 }

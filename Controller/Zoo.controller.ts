@@ -1,7 +1,7 @@
 import {Request, Response, Router} from "express";
 import express from "express";
-import {Employee, EmployeeModel} from "../Model";
-import {Visitor, VisitorModel} from "../Model";
+import {EmployeeModel} from "../Model";
+import {VisitorModel} from "../Model";
 import {Zoo, ZooModel} from "../Model";
 import {Model} from "mongoose";
 
@@ -239,22 +239,25 @@ export class ZooController {
 
         buildRoutes(): Router {
             let router = express.Router();
-            // .bind(this) permet de conserver le this lors de l'appel par express de la fonction
+            //CRUD
             router.get('/', authentication, this.getAll.bind(this));
             router.get('/:name', authentication, this.searchZoo.bind(this));
-            router.delete('/:id', authentication, this.deleteZoo.bind(this));
             router.post('/', authentication, express.json(), this.createZoo.bind(this));
             router.put('/:id', authentication, express.json(), this.updateZoo.bind(this));
+            router.delete('/:id', authentication, this.deleteZoo.bind(this));
+            //Employees
             router.get('/serviceAgent', authentication, this.getServiceAgent.bind(this));
             router.get('/veterinary', authentication, this.getVeterinary.bind(this));
             router.get('/receptionist', authentication, this.getReceptionist.bind(this));
             router.get('/seller', authentication, this.getSeller.bind(this));
             router.get('/visitor', authentication, this.getVisitor.bind(this));
+            // Open/Close the zoo
             router.get('/isAbleToOpen', authentication, this.isAbleToOpen.bind(this));
-            router.get('/isAbleToOpenDetails', authentication, this.isAbleToOpenDetails.bind(this));
-            router.post('/openZoo', authentication, express.json(), this.openZoo.bind(this));
-            router.post('/closeZoo', authentication, express.json(), this.closeZoo.bind(this));
-            router.post('/openNight', authentication, express.json(), this.openNight.bind(this));
+            router.get('/isAbleToOpen/details', authentication, this.isAbleToOpenDetails.bind(this));
+            router.post('/open', authentication, this.openZoo.bind(this));
+            router.post('/close', authentication, this.closeZoo.bind(this));
+            router.post('/openNight', authentication, this.openNight.bind(this));
+            //RETURN
             return router;
         }
 }
