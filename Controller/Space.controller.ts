@@ -1,11 +1,11 @@
 import {Request, Response, Router} from "express";
 import express from "express";
 import {Space, SpaceModel} from "../Model";
-import {Employee, EmployeeModel} from "../Model";
-import {Animal, AnimalModel} from "../Model";
-import {Visitor, VisitorModel} from "../Model";
-import {MaintenanceHistory, MaintenanceHistoryModel} from "../Model";
-import {AttendanceHistory, AttendanceHistoryModel} from "../Model";
+import {EmployeeModel} from "../Model";
+import {AnimalModel} from "../Model";
+import {VisitorModel} from "../Model";
+import {MaintenanceHistoryModel} from "../Model";
+import {AttendanceHistoryModel} from "../Model";
 import {Model} from "mongoose";
 
 const authentication = require('../Middleware/Authentification');
@@ -199,7 +199,7 @@ export class SpaceController {
             .catch(error => res.status(400).json({error}));
     }
 
-    async isSpaceInMaintenance(req: Request, res: Response) {
+    async putInSpaceInMaintenance(req: Request, res: Response) {
         const employee = await EmployeeModel.findOne({email: req.body.email})
         if(employee === null) {
             res.status(404).json({message: "Aucun employée ne possède cette email"})
@@ -235,21 +235,26 @@ export class SpaceController {
 
     buildRoutes(): Router {
         let router = express.Router();
+        //CRUD
         router.get("/", authentication, this.getSpaces.bind(this));
         router.get("/:id", authentication, this.getSpaceById.bind(this));
         router.post("/", authentication, entityConstValidator, this.createSpace.bind(this));
         router.put("/:id", authentication, entityConstValidator, this.updateSpace.bind(this));
         router.delete("/:id", authentication, this.deleteSpace.bind(this));
-        router.get("/:id/maintenanceHistory", authentication, this.getSpaceMaintenanceHistory.bind(this));
-        router.get("/:id/attendanceHistory", authentication, this.getSpaceAttendanceHistory.bind(this));
+        //Animals
         router.get("/:id/animals", authentication, this.getSpaceAnimals.bind(this));
-        router.get("/maintenance", authentication, this.getSpacesInMaintenance.bind(this));
-        router.post("/:id/isVisited", authentication, this.isSpaceGetVisitedByDate.bind(this));
-        router.post("/:id/isVisitedByPeriod", authentication, this.isSpaceGetVisitedByPeriod.bind(this));
         router.get("/:id/animals/treatments", authentication, this.getAnimalsTreatmentBySpace.bind(this));
-        router.get("/:id/isVisitedActually", authentication, this.isSpaceVisitedActually.bind(this));
         router.post("/:id/animals", authentication, this.addAnimalToSpace.bind(this));
-        router.post("/:id/isInMaintenance", authentication, this.isSpaceInMaintenance.bind(this));
+        //Maintenance
+        router.get("/:id/maintenance", authentication, this.getSpacesInMaintenance.bind(this));
+        router.get("/:id/maintenance", authentication, this.getSpaceMaintenanceHistory.bind(this));
+        router.post("/maintenance", authentication, this.putInSpaceInMaintenance.bind(this));
+        //Crowds
+        router.get("/:id/isVisited", authentication, this.isSpaceGetVisitedByDate.bind(this));
+        router.get("/:id/crowds", authentication, this.getSpaceAttendanceHistory.bind(this));
+        router.post("/:id/crowds/period", authentication, this.isSpaceGetVisitedByPeriod.bind(this));
+        router.get("/:id/crowds/live", authentication, this.isSpaceVisitedActually.bind(this));
+        //RETURN
         return router;
     }
 }
