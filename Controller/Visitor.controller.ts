@@ -149,8 +149,8 @@ export class VisitorController {
         //CRUD
         router.get("/", authentication, this.getVisitors.bind(this));
         router.get("/:id", authentication, this.getVisitorById.bind(this));
-        router.post("/", authentication, entityConstValidator, this.createVisitor.bind(this));
-        router.put("/:id", authentication, entityConstValidator, this.updateVisitor.bind(this));
+        router.post("/", authentication,  this.createVisitor.bind(this));
+        router.put("/:id", authentication,  this.updateVisitor.bind(this));
         router.delete("/:id", authentication, this.deleteVisitor.bind(this));
         //PASS
         router.post("/:id/pass", authentication, this.addPassToVisitor.bind(this));

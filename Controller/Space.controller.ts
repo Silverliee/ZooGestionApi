@@ -238,8 +238,8 @@ export class SpaceController {
         //CRUD
         router.get("/", authentication, this.getSpaces.bind(this));
         router.get("/:id", authentication, this.getSpaceById.bind(this));
-        router.post("/", authentication, entityConstValidator, this.createSpace.bind(this));
-        router.put("/:id", authentication, entityConstValidator, this.updateSpace.bind(this));
+        router.post("/", authentication, this.createSpace.bind(this));
+        router.put("/:id", authentication, this.updateSpace.bind(this));
         router.delete("/:id", authentication, this.deleteSpace.bind(this));
         //Animals
         router.get("/:id/animals", authentication, this.getSpaceAnimals.bind(this));

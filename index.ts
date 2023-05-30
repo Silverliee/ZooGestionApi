@@ -1,4 +1,6 @@
 // Les dépendances ici
+import bodyParser from "body-parser";
+
 const mongoose = require("mongoose");
 const express = require('express');
 const { SpaceController, EmployeeController, AnimalController, ZooController, VisitorController } = require("./Controller");
@@ -22,6 +24,22 @@ const spaceController = new SpaceController();
 
 // Création du serveur
 let app = express();
+//bodyparser access config etc
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// @ts-ignore
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PATCH, DELETE, OPTIONS"
+    );
+    next();
+});
 app.use(animalController.path, animalController.buildRoutes());
 app.use(employeeController.path, employeeController.buildRoutes());
 app.use(spaceController.path, spaceController.buildRoutes());
@@ -31,5 +49,5 @@ app.use(visitorController.path, visitorController.buildRoutes());
 // Lancement du serveur
 const port = 8080;
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+    console.log(`⚡️[server]: Le server tourne sur http://localhost:${port}`);
 });
