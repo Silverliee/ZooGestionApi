@@ -58,8 +58,11 @@ export class AnimalController {
 
     async getAnimalTreatment(req: Request, res: Response) {
         const employee = await EmployeeModel.findById(req.body.veterinaryId);
+        if(employee === null) {
+            res.status(404).json({message: "Aucun employée ne correspond à cet Id"})
+        } 
         // @ts-ignore
-        if (employee.role !== 2) {
+        else if (employee.role !== 2) {
             res.status(400).json({ message: "Vous devez être vétérinaire pour ajouter un traitement au carnet" });
         } else {
             const animal = await AnimalModel.findOne({ _id: req.params.id });

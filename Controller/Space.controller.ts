@@ -204,12 +204,11 @@ export class SpaceController {
     }
 
     async putInSpaceInMaintenance(req: Request, res: Response) {
-        const employee = await EmployeeModel.findOne({email: req.body.email})
+        const employee = await EmployeeModel.findById(req.body.userId);
         if(employee === null) {
-            res.status(404).json({message: "Aucun employée ne possède cette email"})
-        } else if(employee.password != req.body.password) {
-            res.status(400).json({message: "Le mot de passe est incorrecte"})
-        } else if(!employee.is_admin) {
+            res.status(404).json({message: "Aucun employée ne correspond à cet Id"})
+        } 
+        else if(!employee.is_admin) {
             res.status(400).json({message: "Vous devez être administrateur pour mettre un espace en maintenance"})
         } else if(req.body.on_maintain === null) {
             res.status(422).json({message: "La valeur fournie n'est pas correcte "})
@@ -240,6 +239,7 @@ export class SpaceController {
     buildRoutes(): Router {
         let router = express.Router();
         //CRUD
+        router.get("/maintenance", this.getSpacesInMaintenance.bind(this));
         router.get("/", authentication, this.getSpaces.bind(this));
         router.get("/:id", authentication, this.getSpaceById.bind(this));
         router.post("/", authentication, this.createSpace.bind(this));
@@ -250,9 +250,8 @@ export class SpaceController {
         router.get("/:id/animals/treatments", authentication, this.getAnimalsTreatmentBySpace.bind(this));
         router.post("/:id/animals", authentication, this.addAnimalToSpace.bind(this));
         //Maintenance
-        router.get("/:id/maintenance", authentication, this.getSpacesInMaintenance.bind(this));
-        router.get("/:id/maintenance", authentication, this.getSpaceMaintenanceHistory.bind(this));
-        router.post("/maintenance", authentication, this.putInSpaceInMaintenance.bind(this));
+        router.get("/:id/maintenance", this.getSpaceMaintenanceHistory.bind(this));
+        router.post("/:id/maintenance", authentication, this.putInSpaceInMaintenance.bind(this));
         //Crowds
         router.get("/:id/isVisited", authentication, this.isSpaceGetVisitedByDate.bind(this));
         router.get("/:id/crowds", authentication, this.getSpaceAttendanceHistory.bind(this));
