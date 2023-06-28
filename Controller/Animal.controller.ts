@@ -41,7 +41,7 @@ export class AnimalController {
             res.status(400).json({ message: "Le contenu de votre requête est invalide" });
         } else {
             await animal.updateOne(req.body);
-            res.status(200).json(animal);
+            res.status(200).json(this.model.findById(req.params.id));
         }
     }
 
