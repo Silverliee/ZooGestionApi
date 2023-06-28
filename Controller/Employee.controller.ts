@@ -52,7 +52,8 @@ export class EmployeeController {
             res.status(400).json({message: "Le contenue de votre requête est invalide"});
         } else {
             await employee.deleteOne();
-            res.status(200).json(employee);
+            const newEmployee = await this.model.findById(req.params.id)
+            res.status(200).json(newEmployee);
         }
     }
 

@@ -97,7 +97,11 @@ export class SpaceController {
         const results = new Array()
         for(let i = 0; i < animals.length; i++) {
             await AnimalModel.findOne({_id: animals[i]})
-                .then(product => results.push(product))
+                .then(product => {
+                    if (product !== null) {
+                        results.push(product)
+                    }
+                })
                 .catch(error => res.status(400).json(error));
         }
         res.status(200).json(results);
