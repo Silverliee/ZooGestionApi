@@ -56,12 +56,9 @@ export class AnimalController {
     }
 
     async getAnimalTreatment(req: Request, res: Response) {
-        const employee = await EmployeeModel.findOne({ email: req.body.email });
-        if (employee === null) {
-            res.status(404).json({ message: "Aucun employé ne possède cet email" });
-        } else if (employee.password !== req.body.password) {
-            res.status(400).json({ message: "Le mot de passe est incorrect" });
-        } else if (employee.role !== 2) {
+        const employee = await EmployeeModel.findById(req.body.veterinaryId);
+        // @ts-ignore
+        if (employee.role !== 2) {
             res.status(400).json({ message: "Vous devez être vétérinaire pour ajouter un traitement au carnet" });
         } else {
             const animal = await AnimalModel.findOne({ _id: req.params.id });
