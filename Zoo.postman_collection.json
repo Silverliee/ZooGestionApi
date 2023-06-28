@@ -28,7 +28,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}\n",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -71,7 +71,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -86,7 +86,7 @@
 									],
 									"path": [
 										"space",
-										"6475a67ccf5751b9cf16ebf4"
+										"{{userid}}"
 									],
 									"query": [
 										{
@@ -112,7 +112,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"test space Damien\",\n    \"description\" : \"Un espace de test\",\n\t\"type\" : 1,\n\t\"capacity\" : 10,\n    \"opening_time\" : \"8h\",\n    \"handicap_access\" : true,\n    \"on_maintain\" : true\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"test space Damien\",\n    \"description\" : \"Un espace de test\",\n\t\"type\" : 1,\n\t\"capacity\" : 10,\n    \"opening_time\" : \"8h\",\n    \"handicap_access\" : true,\n    \"on_maintain\" : true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -151,7 +151,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"name\": \"test ttt\",\n    \"description\": \"Un espace de test\",\n    \"capacity\": 10,\n    \"opening_time\": \"8h\",\n    \"handicap_access\": true,\n    \"on_maintain\": true,\n    \"__v\": 0,\n    \"animals\": [\n        \"607202761b66fce0f035163d\"\n    ],\n    \"maintenanceHistory\": []\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"name\": \"test ttt\",\n    \"description\": \"Un espace de test\",\n    \"capacity\": 10,\n    \"opening_time\": \"8h\",\n    \"handicap_access\": true,\n    \"on_maintain\": true,\n    \"__v\": 0,\n    \"animals\": [\n        \"607202761b66fce0f035163d\"\n    ],\n    \"maintenanceHistory\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -185,7 +185,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -227,7 +227,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -265,7 +265,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -301,7 +301,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"animal_id\" : \"607223596afb47526bd39955\",\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"animal_id\" : \"{{animalid}}\",\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -344,7 +344,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -381,7 +381,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -416,7 +416,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"on_maintain\" : true,\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"on_maintain\" : true,\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -459,7 +459,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -497,7 +497,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -535,7 +535,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -574,7 +574,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"startDate\" : \"2021-04-25\",\n    \"endDate\" : \"2021-04-27\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"startDate\" : \"2021-04-25\",\n    \"endDate\" : \"2021-04-27\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -623,7 +623,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -659,7 +659,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -699,7 +699,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"test veto employee\",\n    \"is_admin\": true,\n    \"role\": 2,\n    \"email\": \"testmail@vetomail.fr\",\n    \"password\": \"testPassword\",\n    \"is_working\": true,\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n    \"name\": \"test veto employee\",\n    \"is_admin\": true,\n    \"role\": 2,\n    \"email\": \"testmail@vetomail.fr\",\n    \"password\": \"testPassword\",\n    \"is_working\": true,\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -738,7 +738,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\" : \"test admin employee modified\",\n    \"is_admin\" : true,\n    \"role\" : 2,\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\",\n    \"is_working\" : true,\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n\t\"name\" : \"test admin employee modified\",\n    \"is_admin\" : true,\n    \"role\" : 2,\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\",\n    \"is_working\" : true,\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -845,7 +845,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -886,7 +886,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -954,7 +954,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -990,7 +990,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1030,7 +1030,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"loup\",\n    \"treatments\": [\n            {\n                \"veterinary\": \"random veto\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"06/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 2\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"12/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 3\",\n                \"treatment\": \"visite de routine\",\n                \"date\" : \"24/06/2021\"\n            }\n        ]\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"loup\",\n    \"treatments\": [\n            {\n                \"veterinary\": \"random veto\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"06/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 2\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"12/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 3\",\n                \"treatment\": \"visite de routine\",\n                \"date\" : \"24/06/2021\"\n            }\n        ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1069,7 +1069,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"louve\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"louve\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1133,7 +1133,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n    \"veterinary\": \"random veto 4\",\n    \"treatment\": \"massage\",\n    \"date\" : \"25/06/2023\",\n    \"email\" : \"testmail@vetomail.fr\",\n    \"password\" : \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"veterinary\": \"random veto 3\",\n    \"treatment\": \"massage\",\n    \"date\" : \"25/06/2021\",\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1187,7 +1187,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1223,7 +1223,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1251,13 +1251,13 @@
 								"header": [
 									{
 										"key": "authorization",
-										"value": "",
+										"value": "{{token}}",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\" : \"DAUL\"\n}",
+									"raw": "{\n    \"name\" : \"DAUL\",\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1284,13 +1284,13 @@
 								"header": [
 									{
 										"key": "authorization",
-										"value": "",
+										"value": "{{token}}",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\" : \"DAUL\",\n    \"pass\" : {\n        \"type\": \"PASS annuel\",\n        \"price\": 50,\n        \"is_valid\": true\n    } \n}",
+									"raw": "{\"userId\": \"{{userid}}\",\"name\" : \"DAUL\",\n    \"pass\" : {\n        \"type\": \"PASS annuel\",\n        \"price\": 50,\n        \"is_valid\": true\n    } \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1348,13 +1348,13 @@
 								"header": [
 									{
 										"key": "authorization",
-										"value": "",
+										"value": "{{token}}",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"type\" : 5,\n    \"price\" : 500,\n    \"is_valid\" : true,\n    \"authorizedSpaces\": [\n        \"607051cd65fe875b63f2161f\",\n        \"6071f3a9d994d8c6d3e86f67\"\n    ]\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"type\" : 5,\n    \"price\" : 500,\n    \"is_valid\" : true,\n    \"authorizedSpaces\": [\n        \"6475a5f6edf36d7f699f734f\"\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1383,13 +1383,13 @@
 								"header": [
 									{
 										"key": "authorization",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDcxYmRiMWNlOGRkZDZjZGJlMTJiYzMiLCJpYXQiOjE2MTkzODI0NDksImV4cCI6MTYxOTQ2ODg0OX0.hi78fHEv1AnUrb5P0j-m5KjqyBddIk7RyAZaQRyvol4",
+										"value": "{{token}}",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1397,7 +1397,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/visitor/{{visitorId}}/move/{{spaceId}}",
+									"raw": "http://{{domain}}/visitor/{{visitorId}}/move/{{espaceid}}",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
@@ -1406,7 +1406,7 @@
 										"visitor",
 										"{{visitorId}}",
 										"move",
-										"{{spaceId}}"
+										"{{espaceid}}"
 									]
 								}
 							},
@@ -1442,7 +1442,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1479,7 +1479,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1502,15 +1502,27 @@
 						},
 						{
 							"name": "Récupère la liste des employés en poste à la reception",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "authorization",
 										"type": "text",
-										"value": ""
+										"value": "{{token}}"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"{{userid}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://{{domain}}/zoo/receptionist",
 									"protocol": "http",
@@ -1541,7 +1553,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1583,7 +1595,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1591,14 +1603,14 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/zoo/abbleToOpen",
+									"raw": "http://{{domain}}/zoo/isAbleToOpen",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"zoo",
-										"abbleToOpen"
+										"isAbleToOpen"
 									]
 								}
 							},
@@ -1620,7 +1632,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1628,14 +1640,14 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/zoo/abbleToOpen/details",
+									"raw": "http://{{domain}}/zoo/isAbleToOpen/details",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"zoo",
-										"abbleToOpen",
+										"isAbleToOpen",
 										"details"
 									]
 								}
@@ -1655,7 +1667,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1689,7 +1701,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1723,7 +1735,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1777,12 +1789,22 @@
 		},
 		{
 			"key": "token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc1YTI2MTg4MDY2ZDYwODBjY2JmMjMiLCJpYXQiOjE2ODU0MzI1NTMsImV4cCI6MTY4NTUxODk1M30.fF99uy3eLWML1-6XxT7O-Xx5SJ2MJyUN4VNZcDHtgIE"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc1YTI2MTg4MDY2ZDYwODBjY2JmMjMiLCJpYXQiOjE2ODc5ODQ3NzQsImV4cCI6MTY4ODA3MTE3NH0.Z2c9KDeOFpswkMdKD4MpdSGQPc5F6PmH8EOlV4nnDU8"
 		},
 		{
 			"key": "userid",
 			"value": "6475a26188066d6080ccbf23",
 			"type": "string"
+		},
+		{
+			"key": "espaceid",
+			"value": "6475a5f6edf36d7f699f734f",
+			"type": "default"
+		},
+		{
+			"key": "visitorId",
+			"value": "649c9e014777c7f4a08e0b03",
+			"type": "default"
 		}
 	]
 }
