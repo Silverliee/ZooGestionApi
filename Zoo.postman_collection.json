@@ -79,14 +79,14 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/space/6475a67ccf5751b9cf16ebf4",
+									"raw": "http://{{domain}}/space/{{spaceId}}",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"space",
-										"{{userid}}"
+										"{{spaceId}}"
 									],
 									"query": [
 										{
@@ -151,7 +151,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"name\": \"test ttt\",\n    \"description\": \"Un espace de test\",\n    \"capacity\": 10,\n    \"opening_time\": \"8h\",\n    \"handicap_access\": true,\n    \"on_maintain\": true,\n    \"__v\": 0,\n    \"animals\": [\n        \"607202761b66fce0f035163d\"\n    ],\n    \"maintenanceHistory\": []\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"name\": \"test tttmodifirifier\",\n    \"description\": \"Un espace de test\",\n    \"capacity\": 10,\n    \"opening_time\": \"8h\",\n    \"handicap_access\": true,\n    \"on_maintain\": true,\n    \"__v\": 0,\n    \"animals\": [\n        \"607202761b66fce0f035163d\"\n    ],\n    \"maintenanceHistory\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -235,13 +235,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/spaces/{{spaceId}}/animals",
+									"raw": "http://{{domain}}/space/{{spaceId}}/animals/",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"spaces",
+										"space",
 										"{{spaceId}}",
 										"animals"
 									]
@@ -381,7 +381,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -416,7 +416,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"on_maintain\" : true,\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"on_maintain\" : true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -497,7 +497,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -535,7 +535,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -560,11 +560,8 @@
 						},
 						{
 							"name": "Récupérer la fréquentation d'un espace par période",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
 										"key": "authorization",
@@ -699,7 +696,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"test veto employee\",\n    \"is_admin\": true,\n    \"role\": 2,\n    \"email\": \"testmail@vetomail.fr\",\n    \"password\": \"testPassword\",\n    \"is_working\": true,\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"name\": \"test veto to delete\",\n    \"is_admin\": true,\n    \"role\": 2,\n    \"email\": \"testmail@vetofdsfsl.fr\",\n    \"password\": \"testPassword\",\n    \"is_working\": true,\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -738,7 +735,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\" : \"test admin employee modified\",\n    \"is_admin\" : true,\n    \"role\" : 2,\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\",\n    \"is_working\" : true,\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n\t\"name\" : \"test admin employee modified\",\n    \"is_admin\" : true,\n    \"role\" : 2,\n    \"email\" : \"testmail@testmailveter.fr\",\n    \"password\" : \"testPassword\",\n    \"is_working\" : true,\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -772,7 +769,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -954,7 +951,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1030,7 +1027,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"loup\",\n    \"treatments\": [\n            {\n                \"veterinary\": \"random veto\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"06/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 2\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"12/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 3\",\n                \"treatment\": \"visite de routine\",\n                \"date\" : \"24/06/2021\"\n            }\n        ]\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"loupiot\",\n    \"treatments\": [\n            {\n                \"veterinary\": \"random veto\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"06/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 2\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"12/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 3\",\n                \"treatment\": \"visite de routine\",\n                \"date\" : \"24/06/2021\"\n            }\n        ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1069,7 +1066,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"louve\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n\t\"name\" : \"louve 50\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1097,10 +1094,19 @@
 								"header": [
 									{
 										"key": "authorization",
-										"value": "",
+										"value": "{{token}}",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"{{userid}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://{{domain}}/animal/{{animalId}}",
 									"protocol": "http",
@@ -1133,7 +1139,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"veterinary\": \"random veto 3\",\n    \"treatment\": \"massage\",\n    \"date\" : \"25/06/2021\",\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"veterinary\": \"random veto 4\",\n    \"treatment\": \"massage\",\n    \"date\" : \"25/06/2023\",\n    \"veterinaryId\": \"649c9d0378b7185ee98ac8d0\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1223,7 +1229,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1257,7 +1263,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\" : \"DAUL\",\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"name\" : \"DAUL\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1290,7 +1296,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"userId\": \"{{userid}}\",\"name\" : \"DAUL\",\n    \"pass\" : {\n        \"type\": \"PASS annuel\",\n        \"price\": 50,\n        \"is_valid\": true\n    } \n}",
+									"raw": "{\n    \"name\" : \"DAUL45\",\n    \"pass\" : {\n        \"type\": 3,\n        \"price\": 50,\n        \"is_valid\": true\n    },\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1354,7 +1360,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"type\" : 5,\n    \"price\" : 500,\n    \"is_valid\" : true,\n    \"authorizedSpaces\": [\n        \"6475a5f6edf36d7f699f734f\"\n    ]\n}",
+									"raw": "{\n    \"type\" : 5,\n    \"price\" : 500,\n    \"is_valid\" : true,\n    \"authorizedSpaces\": [\n        \"607051cd65fe875b63f2161f\",\n        \"6071f3a9d994d8c6d3e86f67\"\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1389,7 +1395,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1397,7 +1403,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/visitor/{{visitorId}}/move/{{espaceid}}",
+									"raw": "http://{{domain}}/visitor/{{visitorId}}/move/{{spaceId}}",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
@@ -1406,7 +1412,7 @@
 										"visitor",
 										"{{visitorId}}",
 										"move",
-										"{{espaceid}}"
+										"{{spaceId}}"
 									]
 								}
 							},
@@ -1442,7 +1448,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1479,7 +1485,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1553,7 +1559,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1580,7 +1586,7 @@
 					"name": "Open/Close Zoo",
 					"item": [
 						{
-							"name": "Vérifier si le zoo peut être ouvert",
+							"name": "Vérifier si le zoo peut être ouvert en fournissant des détails",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1617,44 +1623,6 @@
 							"response": []
 						},
 						{
-							"name": "Vérifier si le zoo peut être ouvert en fournissant des détails",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "authorization",
-										"type": "text",
-										"value": "{{token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://{{domain}}/zoo/isAbleToOpen/details",
-									"protocol": "http",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"zoo",
-										"isAbleToOpen",
-										"details"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Ouverture du zoo par un admin",
 							"request": {
 								"method": "POST",
@@ -1667,7 +1635,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1701,7 +1669,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1735,7 +1703,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1789,7 +1757,7 @@
 		},
 		{
 			"key": "token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc1YTI2MTg4MDY2ZDYwODBjY2JmMjMiLCJpYXQiOjE2ODc5ODQ3NzQsImV4cCI6MTY4ODA3MTE3NH0.Z2c9KDeOFpswkMdKD4MpdSGQPc5F6PmH8EOlV4nnDU8"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc1YTI2MTg4MDY2ZDYwODBjY2JmMjMiLCJpYXQiOjE2ODU0MzI1NTMsImV4cCI6MTY4NTUxODk1M30.fF99uy3eLWML1-6XxT7O-Xx5SJ2MJyUN4VNZcDHtgIE"
 		},
 		{
 			"key": "userid",
@@ -1797,7 +1765,7 @@
 			"type": "string"
 		},
 		{
-			"key": "espaceid",
+			"key": "espaceId",
 			"value": "6475a5f6edf36d7f699f734f",
 			"type": "default"
 		},
