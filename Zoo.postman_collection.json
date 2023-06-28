@@ -1,0 +1,1788 @@
+{
+	"info": {
+		"_postman_id": "84bdf47b-cb27-4197-a725-608e7ab0e173",
+		"name": "Zoo",
+		"description": "Simple expressJs api to manage a zoo by WILLEMAIN Damien, MULET Jules and TRAORE Mohamed Seydou",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Space",
+			"item": [
+				{
+					"name": "CRUB",
+					"item": [
+						{
+							"name": "Récupérer tout les espaces",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space"
+									],
+									"query": [
+										{
+											"key": "Aut",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un espace grace à son ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/6475a67ccf5751b9cf16ebf4",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"6475a67ccf5751b9cf16ebf4"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Créer un espace",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"test space Damien\",\n    \"description\" : \"Un espace de test\",\n\t\"type\" : 1,\n\t\"capacity\" : 10,\n    \"opening_time\" : \"8h\",\n    \"handicap_access\" : true,\n    \"on_maintain\" : true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier un espace",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"name\": \"test ttt\",\n    \"description\": \"Un espace de test\",\n    \"capacity\": 10,\n    \"opening_time\": \"8h\",\n    \"handicap_access\": true,\n    \"on_maintain\": true,\n    \"__v\": 0,\n    \"animals\": [\n        \"607202761b66fce0f035163d\"\n    ],\n    \"maintenanceHistory\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supprimer un espace",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Animals",
+					"item": [
+						{
+							"name": "Récupère tout les animaux d'un espace",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/spaces/{{spaceId}}/animals",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"spaces",
+										"{{spaceId}}",
+										"animals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère le carnet de traitement des animaux d'un espace",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/animals/treatments",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"animals",
+										"treatments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ajouter un animal à un espace",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animal_id\" : \"607223596afb47526bd39955\",\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/animals",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"animals"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Maintenance",
+					"item": [
+						{
+							"name": "Récupérer tout les espaces en maintenance",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/maintenance",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"maintenance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer le carnet d'entretien d'un espace",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/maintenance",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"maintenance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mettre un espace en maintenance",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"on_maintain\" : true,\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/maintenance",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"maintenance"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Crowds",
+					"item": [
+						{
+							"name": "Récupère toute les fréquentations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/crowds",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"crowds"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère la fréquentation d'un espace par date",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/isVisited",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"isVisited"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère la fréquentation d'un espace en temps réel",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/crowds/live",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"crowds",
+										"live"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la fréquentation d'un espace par période",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"startDate\" : \"2021-04-25\",\n    \"endDate\" : \"2021-04-27\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/space/{{spaceId}}/crowds/period",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"crowds",
+										"period"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "Récupérer tout les employées",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un employée grace à son ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/{{employeeId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"{{employeeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Créer un employée",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test veto employee\",\n    \"is_admin\": true,\n    \"role\": 2,\n    \"email\": \"testmail@vetomail.fr\",\n    \"password\": \"testPassword\",\n    \"is_working\": true,\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier un employée",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"test admin employee modified\",\n    \"is_admin\" : true,\n    \"role\" : 2,\n    \"email\" : \"testmail@testmailjkbox.fr\",\n    \"password\" : \"testPassword\",\n    \"is_working\" : true,\n    \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/{{employeeId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"{{employeeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supprimer un employée",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/{{employeeId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"{{employeeId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee gestion",
+					"item": [
+						{
+							"name": "Connexion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"testmail@testmailveter.fr\",\n    \"password\": \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/login",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Un employée commence son service",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/start/{{employeeId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"start",
+										"{{employeeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Un employée finit son service",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/employee/end/{{employeeId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"end",
+										"{{employeeId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Animal",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "Récupérer tout les animaux",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/animal",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un animal grace à son ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"userId\": \"6475a26188066d6080ccbf23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/animal/{{animalId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal",
+										"{{animalId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Créer un animal",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"loup\",\n    \"treatments\": [\n            {\n                \"veterinary\": \"random veto\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"06/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 2\",\n                \"treatment\": \"traitement contre les puces\",\n                \"date\" : \"12/06/2021\"\n            },\n            {\n                \"veterinary\": \"random veto 3\",\n                \"treatment\": \"visite de routine\",\n                \"date\" : \"24/06/2021\"\n            }\n        ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/animal",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier un animal",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n\t\"name\" : \"louve\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/animal/{{animalId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal",
+										"{{animalId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supprimer un animal",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}/animal/{{animalId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal",
+										"{{animalId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Treatment",
+					"item": [
+						{
+							"name": "Ajouter un traitement à un animal",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6475a26188066d6080ccbf23\",\n    \"veterinary\": \"random veto 4\",\n    \"treatment\": \"massage\",\n    \"date\" : \"25/06/2023\",\n    \"email\" : \"testmail@vetomail.fr\",\n    \"password\" : \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/animal/{{animalId}}/treatment",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"animal",
+										"{{animalId}}",
+										"treatment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Visitor",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "Récupérer tout les visiteurs",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un visiteur grace à son id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor/{{visitorId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor",
+										"{{visitorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Créer un visiteur",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"DAUL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier un visiteur",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"DAUL\",\n    \"pass\" : {\n        \"type\": \"PASS annuel\",\n        \"price\": 50,\n        \"is_valid\": true\n    } \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor/{{visitorId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor",
+										"{{visitorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supprimer un visiteur",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}/visitor/{{visitorId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor",
+										"{{visitorId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PASS",
+					"item": [
+						{
+							"name": "Ajouter un pass à un visiteur",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\" : 5,\n    \"price\" : 500,\n    \"is_valid\" : true,\n    \"authorizedSpaces\": [\n        \"607051cd65fe875b63f2161f\",\n        \"6071f3a9d994d8c6d3e86f67\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor/{{visitorId}}/pass",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor",
+										"{{visitorId}}",
+										"pass"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Déplacer un visiteur à un nouvelle espace",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDcxYmRiMWNlOGRkZDZjZGJlMTJiYzMiLCJpYXQiOjE2MTkzODI0NDksImV4cCI6MTYxOTQ2ODg0OX0.hi78fHEv1AnUrb5P0j-m5KjqyBddIk7RyAZaQRyvol4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/visitor/{{visitorId}}/move/{{spaceId}}",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"visitor",
+										"{{visitorId}}",
+										"move",
+										"{{spaceId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ZooController",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": []
+				},
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "Récupère la liste des employés d'entretien en poste",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/serviceAgent",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"serviceAgent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère la liste des employés vétérinaires en poste",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/veterinary",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"veterinary"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère la liste des employés en poste à la reception",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "http://{{domain}}/zoo/receptionist",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"receptionist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère la liste des employés de vente en poste",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/seller",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"seller"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Open/Close Zoo",
+					"item": [
+						{
+							"name": "Vérifier si le zoo peut être ouvert",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/abbleToOpen",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"abbleToOpen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vérifier si le zoo peut être ouvert en fournissant des détails",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/abbleToOpen/details",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"abbleToOpen",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ouverture du zoo par un admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/open",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"open"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fermeture du zoo par un admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/close",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"close"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ouverture nocturne du zoo par un admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{domain}}/zoo/openNight",
+									"protocol": "http",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"zoo",
+										"openNight"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDc1YTI2MTg4MDY2ZDYwODBjY2JmMjMiLCJpYXQiOjE2ODU0MzI1NTMsImV4cCI6MTY4NTUxODk1M30.fF99uy3eLWML1-6XxT7O-Xx5SJ2MJyUN4VNZcDHtgIE"
+		},
+		{
+			"key": "userid",
+			"value": "6475a26188066d6080ccbf23",
+			"type": "string"
+		}
+	]
+}
