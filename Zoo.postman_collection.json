@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "84bdf47b-cb27-4197-a725-608e7ab0e173",
+		"_postman_id": "e35b29e4-861b-4453-bf72-05719b8ae02d",
 		"name": "Zoo",
 		"description": "Simple expressJs api to manage a zoo by WILLEMAIN Damien, MULET Jules and TRAORE Mohamed Seydou",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -10,7 +10,7 @@
 			"name": "Space",
 			"item": [
 				{
-					"name": "CRUB",
+					"name": "CRUD",
 					"item": [
 						{
 							"name": "Récupérer tout les espaces",
@@ -235,7 +235,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/space/{{spaceId}}/animals/",
+									"raw": "http://{{domain}}/space/{{spaceId}}/animals",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
@@ -381,7 +381,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -497,7 +497,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -535,7 +535,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1229,7 +1229,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1395,7 +1395,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1448,7 +1448,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1485,7 +1485,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1559,7 +1559,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1609,14 +1609,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{domain}}/zoo/isAbleToOpen",
+									"raw": "http://{{domain}}/zoo/isAbleToOpen/details",
 									"protocol": "http",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"zoo",
-										"isAbleToOpen"
+										"isAbleToOpen",
+										"details"
 									]
 								}
 							},
@@ -1635,7 +1636,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1669,7 +1670,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1703,7 +1704,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\": \"6071bdb1ce8ddd6cdbe12bc3\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
+									"raw": "{\n    \"userId\": \"{{userid}}\",\n    \"email\": \"testmail@testmailbox.fr\",\n    \"password\": \"testPassword\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1765,13 +1766,23 @@
 			"type": "string"
 		},
 		{
-			"key": "espaceId",
+			"key": "spaceId",
 			"value": "6475a5f6edf36d7f699f734f",
 			"type": "default"
 		},
 		{
 			"key": "visitorId",
 			"value": "649c9e014777c7f4a08e0b03",
+			"type": "default"
+		},
+		{
+			"key": "employeeId",
+			"value": "6475a26188066d6080ccbf23",
+			"type": "default"
+		},
+		{
+			"key": "animalId",
+			"value": "649c9ad378b7185ee98ac8bf",
 			"type": "default"
 		}
 	]
